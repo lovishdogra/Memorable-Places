@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219398871C9B34FA00B8E18B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219398861C9B34FA00B8E18B /* TableViewController.swift */; };
+		219398891C9B3A3600B8E18B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219398881C9B3A3600B8E18B /* CoreLocation.framework */; };
 		21BB14531C9889E200DA7C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB14521C9889E200DA7C54 /* AppDelegate.swift */; };
 		21BB14551C9889E200DA7C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BB14541C9889E200DA7C54 /* ViewController.swift */; };
 		21BB14581C9889E200DA7C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BB14561C9889E200DA7C54 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		219398861C9B34FA00B8E18B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		219398881C9B3A3600B8E18B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		21BB144F1C9889E200DA7C54 /* Memorable Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorable Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB14521C9889E200DA7C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB14541C9889E200DA7C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219398891C9B3A3600B8E18B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,7 @@
 		21BB14461C9889E200DA7C54 = {
 			isa = PBXGroup;
 			children = (
+				219398881C9B3A3600B8E18B /* CoreLocation.framework */,
 				21BB14511C9889E200DA7C54 /* Memorable Places */,
 				21BB14501C9889E200DA7C54 /* Products */,
 			);
@@ -57,6 +63,7 @@
 				21BB14521C9889E200DA7C54 /* AppDelegate.swift */,
 				21BB14541C9889E200DA7C54 /* ViewController.swift */,
 				21BB14561C9889E200DA7C54 /* Main.storyboard */,
+				219398861C9B34FA00B8E18B /* TableViewController.swift */,
 				21BB14591C9889E200DA7C54 /* Assets.xcassets */,
 				21BB145B1C9889E200DA7C54 /* LaunchScreen.storyboard */,
 				21BB145E1C9889E200DA7C54 /* Info.plist */,
@@ -137,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BB14551C9889E200DA7C54 /* ViewController.swift in Sources */,
+				219398871C9B34FA00B8E18B /* TableViewController.swift in Sources */,
 				21BB14531C9889E200DA7C54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +295,7 @@
 				21BB14631C9889E200DA7C54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
