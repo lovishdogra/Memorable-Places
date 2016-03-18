@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21BB144E1C9889E200DA7C54"
-               BuildableName = "Memorable Places.app"
-               BlueprintName = "Memorable Places"
-               ReferencedContainer = "container:Memorable Places.xcodeproj">
+               BuildableName = "Memorable Visits.app"
+               BlueprintName = "Memorable Visits"
+               ReferencedContainer = "container:Memorable Visits.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21BB144E1C9889E200DA7C54"
-            BuildableName = "Memorable Places.app"
-            BlueprintName = "Memorable Places"
-            ReferencedContainer = "container:Memorable Places.xcodeproj">
+            BuildableName = "Memorable Visits.app"
+            BlueprintName = "Memorable Visits"
+            ReferencedContainer = "container:Memorable Visits.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21BB144E1C9889E200DA7C54"
-            BuildableName = "Memorable Places.app"
-            BlueprintName = "Memorable Places"
-            ReferencedContainer = "container:Memorable Places.xcodeproj">
+            BuildableName = "Memorable Visits.app"
+            BlueprintName = "Memorable Visits"
+            ReferencedContainer = "container:Memorable Visits.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21BB144E1C9889E200DA7C54"
-            BuildableName = "Memorable Places.app"
-            BlueprintName = "Memorable Places"
-            ReferencedContainer = "container:Memorable Places.xcodeproj">
+            BuildableName = "Memorable Visits.app"
+            BlueprintName = "Memorable Visits"
+            ReferencedContainer = "container:Memorable Visits.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

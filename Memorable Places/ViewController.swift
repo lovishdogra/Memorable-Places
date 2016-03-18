@@ -21,14 +21,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
+        if activePlace == -1 {
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
+        }
+        else{
+            let latitude = NSString(string: places[activePlace]["lat"]!).doubleValue
+            let longitude = NSString(string: places[activePlace]["long"]!).doubleValue
+            let latDelta:CLLocationDegrees = 0.01
+            let longDelta:CLLocationDegrees = 0.01
+            let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            mapView.setRegion(region, animated: true)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            annotation.title = places[activePlace]["name"]
+            self.mapView.addAnnotation(annotation)
+        }
         
         let uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
-        
         uilpgr.minimumPressDuration = 1.0
         mapView.addGestureRecognizer(uilpgr)
-        
     }
     
     func action(gestureRecognizer:UIGestureRecognizer){
@@ -38,7 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             let location = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
             
-            CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) -> Void in
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
                 var title = ""
                 if(error == nil){
                     if let p:CLPlacemark = CLPlacemark(placemark: (placemarks?[0])! as CLPlacemark) {
@@ -54,33 +68,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         title = "\(subThoroughfare) \(thoroughfare)"
                     }
                 }
-                if title == "" {
+                if title.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" {
                     title = "Added \(NSDate())"
                 }
-                
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = newCoordinate
-                annotation.title = title
-                self.mapView.addAnnotation(annotation)
-            }
+                places.append(["name":title, "lat":"\(newCoordinate.latitude)", "long":"\(newCoordinate.longitude)"])
+                print(places)
+            })
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let userLocation:CLLocation = locations[0]
-        let latitude = userLocation.coordinate.latitude
-        let longitude = userLocation.coordinate.longitude
-        
-        let latDelta:CLLocationDegrees = 0.01
-        let longDelta:CLLocationDegrees = 0.01
-        
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        mapView.setRegion(region, animated: true)
-    }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

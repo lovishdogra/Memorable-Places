@@ -9,7 +9,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Map View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="Memorable_Visits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -41,7 +41,7 @@
         <!--Root View Controller-->
         <scene sceneID="QiT-S0-WNN">
             <objects>
-                <tableViewController id="xLh-4h-6Do" customClass="TableViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xLh-4h-6Do" customClass="TableViewController" customModule="Memorable_Visits" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zry-O9-H7p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Q6C-Fz-bQX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,7 +68,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="ohI-mU-MHV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dku-1s-xtd">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="5vL-WN-U40"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="newPlace" id="5vL-WN-U40"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -92,4 +95,7 @@
             <point key="canvasLocation" x="-12" y="957"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5vL-WN-U40"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,16 +8,18 @@
 
 import UIKit
 
+var places = [Dictionary<String,String>()]
+var activePlace = -1
+
 class TableViewController: UITableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if places.count == 1 {
+            places.removeAtIndex(0)
+            places.append(["name":"Taj Mahal", "lat":"27.175277", "long":"78.042128"])
+        }
         
         tableView.tableFooterView = UIView() //Remove the unused rows from the table view controller.
     }
@@ -36,16 +38,30 @@ class TableViewController: UITableViewController{
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return places.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Testing data"
+        cell.textLabel?.text = places[indexPath.row]["name"]
 
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        activePlace = indexPath.row
+        return indexPath
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newPlace" {
+            activePlace = -1
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -55,17 +71,16 @@ class TableViewController: UITableViewController{
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+        } 
+        //else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-    */
 
     /*
     // Override to support rearranging the table view.

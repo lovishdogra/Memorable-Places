@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		219398861C9B34FA00B8E18B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		219398881C9B3A3600B8E18B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		21BB144F1C9889E200DA7C54 /* Memorable Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorable Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21BB144F1C9889E200DA7C54 /* Memorable Visits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorable Visits.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BB14521C9889E200DA7C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BB14541C9889E200DA7C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		21BB14571C9889E200DA7C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		21BB14501C9889E200DA7C54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21BB144F1C9889E200DA7C54 /* Memorable Places.app */,
+				21BB144F1C9889E200DA7C54 /* Memorable Visits.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,9 +74,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21BB144E1C9889E200DA7C54 /* Memorable Places */ = {
+		21BB144E1C9889E200DA7C54 /* Memorable Visits */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21BB14611C9889E200DA7C54 /* Build configuration list for PBXNativeTarget "Memorable Places" */;
+			buildConfigurationList = 21BB14611C9889E200DA7C54 /* Build configuration list for PBXNativeTarget "Memorable Visits" */;
 			buildPhases = (
 				21BB144B1C9889E200DA7C54 /* Sources */,
 				21BB144C1C9889E200DA7C54 /* Frameworks */,
@@ -86,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = "Memorable Places";
+			name = "Memorable Visits";
 			productName = "Memorable Places";
-			productReference = 21BB144F1C9889E200DA7C54 /* Memorable Places.app */;
+			productReference = 21BB144F1C9889E200DA7C54 /* Memorable Visits.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 21BB144A1C9889E200DA7C54 /* Build configuration list for PBXProject "Memorable Places" */;
+			buildConfigurationList = 21BB144A1C9889E200DA7C54 /* Build configuration list for PBXProject "Memorable Visits" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				21BB144E1C9889E200DA7C54 /* Memorable Places */,
+				21BB144E1C9889E200DA7C54 /* Memorable Visits */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +261,7 @@
 				INFOPLIST_FILE = "Memorable Places/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lovishdogra.Memorable-Places";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Memorable Visits";
 			};
 			name = Debug;
 		};
@@ -272,14 +272,14 @@
 				INFOPLIST_FILE = "Memorable Places/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lovishdogra.Memorable-Places";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Memorable Visits";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21BB144A1C9889E200DA7C54 /* Build configuration list for PBXProject "Memorable Places" */ = {
+		21BB144A1C9889E200DA7C54 /* Build configuration list for PBXProject "Memorable Visits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21BB145F1C9889E200DA7C54 /* Debug */,
@@ -288,7 +288,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21BB14611C9889E200DA7C54 /* Build configuration list for PBXNativeTarget "Memorable Places" */ = {
+		21BB14611C9889E200DA7C54 /* Build configuration list for PBXNativeTarget "Memorable Visits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21BB14621C9889E200DA7C54 /* Debug */,
