@@ -19,7 +19,7 @@ class TableViewController: UITableViewController{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //self.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableFooterView = UIView() //Remove the unused rows from the table view controller.
     }
 
     override func didReceiveMemoryWarning() {
