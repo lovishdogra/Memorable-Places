@@ -21,6 +21,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        NSUserDefaults.standardUserDefaults().setObject(places, forKey: "places")
+        
         if activePlace == -1 {
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
@@ -33,13 +36,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
             let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
             let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+
             mapView.setRegion(region, animated: true)
+            
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
             annotation.title = places[activePlace]["name"]
             self.mapView.addAnnotation(annotation)
         }
-        
         let uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
         uilpgr.minimumPressDuration = 1.0
         mapView.addGestureRecognizer(uilpgr)
@@ -73,6 +77,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 places.append(["name":title, "lat":"\(newCoordinate.latitude)", "long":"\(newCoordinate.longitude)"])
                 print(places)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = newCoordinate
+                annotation.title = title
+                self.mapView.addAnnotation(annotation)
             })
         }
     }
