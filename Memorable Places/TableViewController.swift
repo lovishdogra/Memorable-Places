@@ -17,12 +17,12 @@ class TableViewController: UITableViewController{
         super.viewDidLoad()
         
         if places.count == 1 {
-            places.removeAtIndex(0)
+            places.remove(at: 0)
             places.append(["name":"Taj Mahal", "lat":"27.175277", "long":"78.042128"])
         }
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("places") != nil {
-            places = NSUserDefaults.standardUserDefaults().objectForKey("places") as! Array
+        if UserDefaults.standard.object(forKey: "places") != nil {
+            places = UserDefaults.standard.object(forKey: "places") as! Array
         }
         
         tableView.tableFooterView = UIView() //Remove the unused rows from the table view controller.
@@ -35,35 +35,35 @@ class TableViewController: UITableViewController{
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return places.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = places[indexPath.row]["name"]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = places[(indexPath as NSIndexPath).row]["name"]
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        activePlace = indexPath.row
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        activePlace = (indexPath as NSIndexPath).row
         return indexPath
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newPlace" {
             activePlace = -1
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
@@ -77,12 +77,12 @@ class TableViewController: UITableViewController{
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             // Delete the row from the data source
-            places.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(places, forKey: "places")
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+            places.remove(at: (indexPath as NSIndexPath).row)
+            UserDefaults.standard.set(places, forKey: "places")
+            tableView.deleteRows(at: [indexPath], with: .top)
         }
         //else if editingStyle == .Insert {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

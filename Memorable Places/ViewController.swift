@@ -22,7 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         
-        NSUserDefaults.standardUserDefaults().setObject(places, forKey: "places")
+        UserDefaults.standard.set(places, forKey: "places")
         
         if activePlace == -1 {
         manager.requestAlwaysAuthorization()
@@ -44,15 +44,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             annotation.title = places[activePlace]["name"]
             self.mapView.addAnnotation(annotation)
         }
-        let uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
+        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
         uilpgr.minimumPressDuration = 1.0
         mapView.addGestureRecognizer(uilpgr)
     }
     
-    func action(gestureRecognizer:UIGestureRecognizer){
-        if gestureRecognizer.state == UIGestureRecognizerState.Began {
-            let touchPoint = gestureRecognizer.locationInView(self.mapView)
-            let newCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: self.mapView )
+    func action(_ gestureRecognizer:UIGestureRecognizer){
+        if gestureRecognizer.state == UIGestureRecognizerState.began {
+            let touchPoint = gestureRecognizer.location(in: self.mapView)
+            let newCoordinate = mapView.convert(touchPoint, toCoordinateFrom: self.mapView )
             
             let location = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
             
@@ -72,8 +72,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         title = "\(subThoroughfare) \(thoroughfare)"
                     }
                 }
-                if title.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" {
-                    title = "Added \(NSDate())"
+                if title.trimmingCharacters(in: CharacterSet.whitespaces) == "" {
+                    title = "Added \(Date())"
                 }
                 places.append(["name":title, "lat":"\(newCoordinate.latitude)", "long":"\(newCoordinate.longitude)"])
                 print(places)

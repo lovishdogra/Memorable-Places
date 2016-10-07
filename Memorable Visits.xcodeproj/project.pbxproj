@@ -104,6 +104,7 @@
 					21BB144E1C9889E200DA7C54 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = R2HCX9V229;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -262,6 +263,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lovishdogra.Memorable-Places";
 				PRODUCT_NAME = "Memorable Visits";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -273,6 +275,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lovishdogra.Memorable-Places";
 				PRODUCT_NAME = "Memorable Visits";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
